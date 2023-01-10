@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace BankApp
+﻿namespace BankApp
 {
     public class Bank
     {
@@ -14,12 +9,12 @@ namespace BankApp
 
         public string Name { get; set; }
         public List<Account> Accounts { get; set; } = new List<Account>();
-
+        
         public void AddAccount(Account account)
         {
             Accounts.Add(account);
         }
-
+        
         public bool Deposit(decimal amount, int accountNumber)
         {
             var account = Accounts.FirstOrDefault(a => a.AccountNumber == accountNumber);
@@ -41,7 +36,7 @@ namespace BankApp
          
             return false;
         }
-
+        
         public bool Transfer(decimal amount, int fromAccountNumber, int toAccountNumber)
         {
             var fromAccount = Accounts.FirstOrDefault(a => a.AccountNumber == fromAccountNumber);
